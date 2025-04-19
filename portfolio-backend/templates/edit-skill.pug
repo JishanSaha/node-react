@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Edit Skill
+  form(action=`/skills/edit/${skill._id}` method="POST")
+    label(for="name") Skill Name:
+    input(type="text" name="name" required value=skill.name)
+
+    label(for="level") Level:
+    select(name="level" required)
+      option(value="Beginner" selected=skill.level==="Beginner") Beginner
+      option(value="Intermediate" selected=skill.level==="Intermediate") Intermediate
+      option(value="Expert" selected=skill.level==="Expert") Expert
+
+    label(for="category") Category:
+    input(type="text" name="category" required value=skill.category)
+
+    button(type="submit") Save Changes

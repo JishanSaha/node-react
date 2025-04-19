@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Edit Project
+  form(action=`/projects/edit/${project._id}` method="POST")
+    label(for="title") Title:
+    input(type="text" name="title" required value=project.title)
+
+    label(for="description") Description:
+    textarea(name="description")= project.description
+
+    label(for="technologies") Technologies (comma-separated):
+    input(type="text" name="technologies" required value=project.technologies.join(", "))
+
+    label(for="year") Year:
+    input(type="number" name="year" required value=project.year)
+
+    button(type="submit") Save Changes

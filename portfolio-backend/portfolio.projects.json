@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "67b6174e34b70fc12145e742"
+  },
+  "title": "Portfolio Website",
+  "description": "A personal portfolio built with Node.js and Pug.",
+  "technologies": [
+    "Node.js",
+    "Express",
+    "MongoDB"
+  ],
+  "year": 2024,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b6174e34b70fc12145e743"
+  },
+  "title": "E-commerce App",
+  "description": "An online store with payment integration.",
+  "technologies": [
+    "React",
+    "Firebase",
+    "Stripe"
+  ],
+  "year": 2023,
+  "__v": 0
+}]
