@@ -1,0 +1,45 @@
+[{
+  "_id": {
+    "$oid": "67b6174e34b70fc12145e745"
+  },
+  "name": "JavaScript",
+  "level": "Expert",
+  "category": "Programming",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b6174e34b70fc12145e746"
+  },
+  "name": "Node.js",
+  "level": "Intermediate",
+  "category": "Backend",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b6174e34b70fc12145e747"
+  },
+  "name": "MongoDB",
+  "level": "Beginner",
+  "category": "Database",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b61b127bbd87d5c96f643b"
+  },
+  "name": "CSS",
+  "level": "Intermediate",
+  "category": "Frontend",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67b625b9445cdb1e24671a87"
+  },
+  "name": "HTML",
+  "level": "Expert",
+  "category": "Frontend",
+  "__v": 0
+}]

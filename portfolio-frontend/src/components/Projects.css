@@ -1,0 +1,36 @@
+.projects {
+    padding: 40px 20px;
+    background-color: #f1f5f9;
+  }
+  
+  .projects h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #0f172a;
+  }
+  
+  .project-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .project-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .project-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: #1e293b;
+  }
+  
+  .project-card p {
+    color: #334155;
+    margin-bottom: 8px;
+  }

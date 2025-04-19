@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  h2 My Profile
+  div.profile
+    p
+      strong Name:
+      |  #{user.name}
+    p
+      strong Bio:
+      |  #{user.bio}
+    p
+      strong Email:
+      |  #{user.email}
+    p
+      strong Phone:
+      |  #{user.phone}
+
+  a(href="/profile/edit")
+    button 📝 Edit Profile

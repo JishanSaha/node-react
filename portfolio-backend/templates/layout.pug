@@ -1,0 +1,22 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    title #{title}
+    link(rel="stylesheet" href="/styles.css")
+  body
+    header
+      h1 Jishan's Portfolio
+    nav
+      ul
+        li: a(href="/") Home
+        li: a(href="/projects") Projects
+        li: a(href="/projects/add") ➕ Add Project
+        li: a(href="/skills") Skills
+        li: a(href="/skills/add") ➕ Add Skill
+        li: a(href="/profile") 👤 My Profile
+    main
+      block content
+    footer
+      p &copy; 2025 My Portfolio

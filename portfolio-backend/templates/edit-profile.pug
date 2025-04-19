@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h2 Edit Your Profile
+  form(action="/profile/edit" method="POST")
+    label(for="name") Name:
+    input(type="text" name="name" required value=user.name)
+
+    label(for="bio") Bio:
+    textarea(name="bio")= user.bio
+
+    label(for="email") Email:
+    input(type="email" name="email" required value=user.email)
+
+    label(for="phone") Phone:
+    input(type="text" name="phone" required value=user.phone)
+
+    button(type="submit") Save Changes

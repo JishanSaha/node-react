@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h2 My Skills
+  ul
+    each skill in skills
+      li
+        strong #{skill.name} (#{skill.level})
+        p Category: #{skill.category}
+        a(href=`/skills/edit/${skill._id}`) ✏️ Edit
+        form(action=`/skills/delete/${skill._id}` method="POST" style="display:inline")
+          button(type="submit" onclick="return confirm('Are you sure?')") ❌ Delete
