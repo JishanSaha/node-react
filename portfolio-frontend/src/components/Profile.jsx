@@ -1,32 +1,49 @@
 import React, { useEffect, useState } from "react";
-import * as api from "../api/api";
-import "./Profile.css";
+import { getUser } from "../api/api";
 
 const Profile = () => {
-  const [profile, setProfile] = useState(null);
+  const [projects, setProjects] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchProfile = async () => {
-      try {
-        const response = await api.get("/api/users/1"); // assuming user ID is 1
-        setProfile(response.data);
-      } catch (err) {
-        console.error("❌ Failed to load profile", err);
-      }
-    };
-
-    fetchProfile();
+    getUser()
+      .then(data => {
+        console.log("Fetched projects:", data);
+        setProjects(data);
+        setLoading(false);
+      })
+      .catch(err => {
+        console.error("Error fetching projects:", err);
+        setError("Failed to load projects.");
+        setLoading(false);
+      });
   }, []);
 
-  if (!profile) {
-    return <p>Loading profile...</p>;
-  }
-
   return (
-    <div className="profile">
-      <h2>{profile.name}</h2>
-      <p>Email: {profile.email}</p>
-      <p>Bio: {profile.bio}</p>
+    <div style={{ padding: "2rem" }}>
+      <h2>Projects</h2>
+      {loading ? (
+        <p>Loading projects...</p>
+      ) : error ? (
+        <p style={{ color: "red" }}>{error}</p>
+      ) : projects.length === 0 ? (
+        <p>No projects found.</p>
+      ) : (
+        <ul>
+          {projects.map((project, index) => (
+            <li key={index} style={{ marginBottom: "1rem" }}>
+              {/* <h3>{project.name}</h3>
+              <p>{project.bio}</p> */}
+              <p><strong>Name:</strong> {project.name}</p>
+              <p><strong>bio:</strong> {project.bio}</p>
+              {/* <p><strong>Technologies:</strong> {project.technologies?.join(", ")}</p> */}
+              <p><strong>Email:</strong> {project.email}</p>
+              <p><strong>Phone:</strong> {project.phone}</p>
+            </li>
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
